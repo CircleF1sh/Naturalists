@@ -6,17 +6,17 @@ license="All rights reserved"
 
 [[mods]] #mandatory
 
-modId="naturalists" #mandatory
+modId="thenaturalist" #mandatory
 
-version="0.0.1" #mandatory
+version="0.1.0" #mandatory
 
-displayName="Naturalists" #mandatory
+displayName="The Naturalist" #mandatory
 
-logoFile="examplemod.png" #optional
+logoFile="logo.png" #optional
 
 credits="Credits go to the community who made this mod possible!" #optional
 
-authors="noon, CircleF1sh, GLaDOS edition, amo, CactusKing, CreativityShark, crispytwig, and Kittyherz" #optional
+authors="noon, CircleF1sh, GLaDOS edition, amo, CactusKing, CreativityShark, crispytwig, Kittyherz, and Coda" #optional
 
 description='''
 The Naturalist Mod aims to breathe life into Minecraft by adding a plethora of animals to the game as well as some unique environments.

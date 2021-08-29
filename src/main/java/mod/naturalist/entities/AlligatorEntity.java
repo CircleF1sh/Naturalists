@@ -1,4 +1,4 @@
-package com.circle.naturalists.entities;
+package mod.naturalist.entities;
 
 import net.minecraft.entity.AgeableEntity;
 import net.minecraft.entity.EntityType;
@@ -11,9 +11,9 @@ import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 
-public class CrocodileEntity extends AnimalEntity {
+public class AlligatorEntity extends AnimalEntity {
 
-    public CrocodileEntity(EntityType<? extends AnimalEntity> p_i48568_1_, World p_i48568_2_) {
+    public AlligatorEntity(EntityType<? extends AnimalEntity> p_i48568_1_, World p_i48568_2_) {
         super(p_i48568_1_, p_i48568_2_);
     }
 

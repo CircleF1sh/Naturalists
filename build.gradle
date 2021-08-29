@@ -13,8 +13,8 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 version = '0.0.1'
-group = 'com.circle.naturalists' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'naturalists'
+group = 'mod.thenaturalist' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'thenaturalist'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
 
@@ -24,7 +24,7 @@ minecraft {
     mappings channel: 'official', version: '1.16.5'
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    // accessTransformer = file('src/main/resources/META-INF/naturalist_at.cfg')
 
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.

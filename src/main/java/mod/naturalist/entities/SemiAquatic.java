@@ -1,4 +1,4 @@
-package com.circle.naturalists.entities;
+package mod.naturalist.entities;
 
 public interface SemiAquatic {
 
