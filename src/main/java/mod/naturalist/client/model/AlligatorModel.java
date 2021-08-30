@@ -71,7 +71,7 @@ public class AlligatorModel extends AgeableModel<AlligatorEntity> {
         this.FarRightSpine = new ModelRenderer(this, 0, -3);
         this.FarRightSpine.setPos(-6.1F, -5.0F, 0.0F);
         this.FarRightSpine.addBox(0.0F, -1.0F, -9.5F, 0.0F, 1.0F, 19.0F, 0.0F, 0.0F, 0.0F);
-        this.Teeth = new ModelRenderer(this, 80, 24);
+        this.Teeth = new ModelRenderer(this, 70, 24);
         this.Teeth.setPos(0.0F, -1.0F, -11.0F);
         this.Teeth.addBox(-4.5F, 0.0F, -5.0F, 9.0F, 1.0F, 10.0F, 0.0F, 0.0F, 0.0F);
         this.Tail = new ModelRenderer(this, 53, 90);

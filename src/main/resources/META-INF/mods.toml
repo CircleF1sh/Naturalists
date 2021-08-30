@@ -6,7 +6,7 @@ license="All rights reserved"
 
 [[mods]] #mandatory
 
-modId="thenaturalist" #mandatory
+modId="naturalist" #mandatory
 
 version="0.1.0" #mandatory
 
