@@ -4,6 +4,7 @@ import mod.naturalist.client.ClientEvents;
 import mod.naturalist.entities.AlligatorEntity;
 import mod.naturalist.init.NaturalistBlocks;
 import mod.naturalist.init.NaturalistEntities;
+import mod.naturalist.init.NaturalistFeatures;
 import mod.naturalist.init.NaturalistItems;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -35,6 +36,7 @@ public class Naturalist {
         NaturalistEntities.ENTITIES.register(bus);
         NaturalistBlocks.BLOCKS.register(bus);
         NaturalistItems.ITEMS.register(bus);
+        NaturalistFeatures.FEATURES.register(bus);
     }
 
     private void setup(final FMLCommonSetupEvent event) {

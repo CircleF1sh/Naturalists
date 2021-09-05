@@ -1,6 +1,7 @@
 package mod.naturalist.init;
 
 import mod.naturalist.Naturalist;
+import mod.naturalist.block.ElmSaplingBlock;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -19,6 +20,7 @@ public class NaturalistBlocks {
 
     public static final RegistryObject<Block> ELM_LOG = register("elm_log", () -> new RotatedPillarBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GRAY).strength(2.0F).harvestTool(ToolType.AXE).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> ELM_LEAVES = register("elm_leaves", () -> new LeavesBlock(AbstractBlock.Properties.of(Material.LEAVES).randomTicks().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> ELM_SAPLING = register("elm_sapling", () -> new ElmSaplingBlock(AbstractBlock.Properties.of(Material.PLANT).randomTicks().sound(SoundType.GRASS).noOcclusion()));
 
     // use these helper methods to register blocks rather than REGISTER.register()
     // this also automatically registers block items so we don't need to do it manually
