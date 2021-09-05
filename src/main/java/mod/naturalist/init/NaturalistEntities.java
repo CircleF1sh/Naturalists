@@ -10,7 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class NaturalistEntities {
-    public static final DeferredRegister<EntityType<?>> REGISTER = DeferredRegister.create(ForgeRegistries.ENTITIES, Naturalist.MOD_ID);
+    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, Naturalist.MOD_ID);
 
     public static final RegistryObject<EntityType<AlligatorEntity>> ALLIGATOR = register("alligator",
             EntityType.Builder.of(AlligatorEntity::new, EntityClassification.AMBIENT)
@@ -18,6 +18,6 @@ public class NaturalistEntities {
 
     // use this helper method to register entities rather than REGISTER.register()
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> builder) {
-        return REGISTER.register(name, () -> builder.build(Naturalist.MOD_ID + "." + name));
+        return ENTITIES.register(name, () -> builder.build(Naturalist.MOD_ID + "." + name));
     }
 }
