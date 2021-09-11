@@ -3,6 +3,10 @@
   "block.naturalist.elm_leaves": "Elm Leaves",
   "block.naturalist.elm_sapling": "Elm Sapling",
   "block.naturalist.mud": "Mud",
+  "block.naturalist.mud_bricks": "Mud Bricks",
+  "block.naturalist.elm_planks": "Elm Planks",
+  "block.naturalist.elm_door": "Elm Door",
+  "block.naturalist.elm_trapdoor": "Elm Trapdoor",
 
   "entity.naturalist.alligator": "Alligator",
 

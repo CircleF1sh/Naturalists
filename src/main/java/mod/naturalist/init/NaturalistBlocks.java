@@ -6,6 +6,7 @@ import mod.naturalist.block.MudBlock;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraft.client.audio.Sound;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.ToolType;
@@ -23,10 +24,14 @@ public class NaturalistBlocks {
     public static final RegistryObject<Block> ELM_LOG = register("elm_log", () -> new RotatedPillarBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GRAY).strength(2.0F).harvestTool(ToolType.AXE).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> ELM_LEAVES = register("elm_leaves", () -> new LeavesBlock(AbstractBlock.Properties.of(Material.LEAVES).randomTicks().sound(SoundType.GRASS).noOcclusion()));
     public static final RegistryObject<Block> ELM_SAPLING = register("elm_sapling", () -> new ElmSaplingBlock(AbstractBlock.Properties.of(Material.PLANT).randomTicks().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> ELM_PLANKS = register("elm_planks", () -> new Block(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GRAY).strength(2.0F).harvestTool(ToolType.AXE).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> ELM_DOOR = register("elm_door", () -> new DoorBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GRAY).strength(2.0F).harvestTool(ToolType.AXE).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> ELM_TRAPDOOR = register("elm_trapdoor", () -> new TrapDoorBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GRAY).strength(2.0F).harvestTool(ToolType.AXE).sound(SoundType.WOOD)));
 
     // Mud
     public static final Block MUD_BLOCK = new MudBlock(AbstractBlock.Properties.of(Material.DIRT).strength(0.5f).sound(SoundType.SLIME_BLOCK).harvestTool(ToolType.SHOVEL).speedFactor(0.5F));
     public static final RegistryObject<Block> MUD = register("mud", () -> MUD_BLOCK);
+    public static final RegistryObject<Block> MUD_BRICKS = register("mud_bricks", ()-> new Block(AbstractBlock.Properties.of(Material.DIRT).strength(0.8f).sound(SoundType.HARD_CROP).harvestTool(ToolType.SHOVEL)));
 
 
     // use these helper methods to register blocks rather than REGISTER.register()
