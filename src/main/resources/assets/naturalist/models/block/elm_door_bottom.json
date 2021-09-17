@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom",
+  "textures": {
+    "top": "naturalist:block/elm_door_top",
+    "bottom": "naturalist:block/elm_door_bottom"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "naturalist:item/generated",
   "textures": {
     "layer0": "naturalist:item/elm_sapling"
   }
