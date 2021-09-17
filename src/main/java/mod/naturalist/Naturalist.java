@@ -17,6 +17,7 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.placement.*;
+import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
@@ -25,17 +26,20 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @Mod(Naturalist.MOD_ID)
 public class Naturalist {
     public static final String MOD_ID = "naturalist";
-    public static ConfiguredFeature<?, ?> MUD_CONFIGURED;
-    public final static ItemGroup GROUP = new ItemGroup(MOD_ID) {
+    public  static final ItemGroup GROUP = new ItemGroup(MOD_ID) {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(Items.OAK_SAPLING);
         }
     };
+    public static ConfiguredFeature<?, ?> MUD_CONFIGURED;
+    public static final Logger LOGGER = LogManager.getLogger();
 
     public Naturalist() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -44,6 +48,7 @@ public class Naturalist {
         bus.addListener(this::setup);
         bus.addListener(this::registerEntityAttributes);
         bus.addListener(this::registerClient);
+
         forgeBus.addListener(this::onBiomeLoading);
 
         NaturalistEntities.ENTITIES.register(bus);
@@ -54,14 +59,13 @@ public class Naturalist {
 
     private void setup(final FMLCommonSetupEvent event) {
          MUD_CONFIGURED = register("mud_configured", NaturalistFeatures.MUD.get().configured(NoFeatureConfig.INSTANCE));
-         MUD_CONFIGURED.decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(100, 1.0F, 100)));
+         MUD_CONFIGURED.decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(100, 1.0F, 1)));
     }
 
     private void onBiomeLoading(BiomeLoadingEvent event) {
         Biome.Category category = event.getCategory();
-
         if (category.equals(Biome.Category.SWAMP)) {
-            event.getGeneration().getFeatures(GenerationStage.Decoration.RAW_GENERATION).add(() -> Naturalist.MUD_CONFIGURED);
+            event.getGeneration().getFeatures(GenerationStage.Decoration.TOP_LAYER_MODIFICATION).add(() -> Naturalist.MUD_CONFIGURED);
         }
     }
 
