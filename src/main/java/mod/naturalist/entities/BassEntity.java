@@ -1,5 +1,6 @@
 package mod.naturalist.entities;
 
+import mod.naturalist.init.NaturalistItems;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.fish.AbstractGroupFishEntity;
 import net.minecraft.item.ItemStack;
@@ -16,7 +17,7 @@ public class BassEntity extends AbstractGroupFishEntity {
 
     @Override
     protected ItemStack getBucketItemStack() {
-        return null;
+        return new ItemStack(NaturalistItems.BASS_BUCKET.get());
     }
 
     @Override

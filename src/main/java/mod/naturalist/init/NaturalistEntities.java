@@ -17,12 +17,12 @@ public class NaturalistEntities {
             EntityType.Builder.of(AlligatorEntity::new, EntityClassification.AMBIENT)
                     .sized(1.1F, 1.4F));
 
+    public static final RegistryObject<EntityType<BassEntity>> BASS = register("bass",
+            EntityType.Builder.of(BassEntity::new, EntityClassification.WATER_AMBIENT)
+                    .sized(0.7F, 0.85F));
+
     // use this helper method to register entities rather than REGISTER.register()
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> builder) {
         return ENTITIES.register(name, () -> builder.build(Naturalist.MOD_ID + "." + name));
     }
-
-    public static final RegistryObject<EntityType<BassEntity>> BASS = register("bass",
-            EntityType.Builder.of(BassEntity::new, EntityClassification.WATER_AMBIENT)
-                    .sized(0.7F, 0.85F));
 }

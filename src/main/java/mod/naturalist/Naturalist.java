@@ -31,8 +31,12 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Mod(Naturalist.MOD_ID)
 public class Naturalist {
+    public static final List<Runnable> CALLBACKS = new ArrayList<>();
     public static final String MOD_ID = "naturalist";
     public  static final ItemGroup GROUP = new ItemGroup(MOD_ID) {
         @Override
@@ -78,10 +82,14 @@ public class Naturalist {
 
     private void registerClient(FMLClientSetupEvent event) {
         ClientEvents.init();
+        CALLBACKS.forEach(Runnable::run);
+        CALLBACKS.clear();
+
     }
 
     // use this for ConfiguredFeature registry
     private static <FC extends IFeatureConfig > ConfiguredFeature<FC, ?> register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
         return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, name, configuredFeature);
     }
+
 }
