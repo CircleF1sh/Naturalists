@@ -2,6 +2,7 @@ package mod.naturalist.init;
 
 import mod.naturalist.Naturalist;
 import mod.naturalist.entities.AlligatorEntity;
+import mod.naturalist.entities.BassEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -20,4 +21,8 @@ public class NaturalistEntities {
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> builder) {
         return ENTITIES.register(name, () -> builder.build(Naturalist.MOD_ID + "." + name));
     }
+
+    public static final RegistryObject<EntityType<BassEntity>> BASS = register("bass",
+            EntityType.Builder.of(BassEntity::new, EntityClassification.WATER_AMBIENT)
+                    .sized(0.7F, 0.85F));
 }

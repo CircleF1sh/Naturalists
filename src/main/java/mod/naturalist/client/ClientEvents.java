@@ -2,6 +2,7 @@ package mod.naturalist.client;
 
 import mod.naturalist.Naturalist;
 import mod.naturalist.client.renderer.AlligatorRenderer;
+import mod.naturalist.client.renderer.BassRenderer;
 import mod.naturalist.init.NaturalistBlocks;
 import mod.naturalist.init.NaturalistEntities;
 import net.minecraft.client.renderer.RenderType;
@@ -17,5 +18,6 @@ public class ClientEvents {
         RenderTypeLookup.setRenderLayer(NaturalistBlocks.ELM_SAPLING.get(), RenderType.cutout());
 
         RenderingRegistry.registerEntityRenderingHandler(NaturalistEntities.ALLIGATOR.get(), AlligatorRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(NaturalistEntities.BASS.get(), BassRenderer::new);
     }
 }

@@ -6,6 +6,8 @@ import mod.naturalist.init.NaturalistBlocks;
 import mod.naturalist.init.NaturalistEntities;
 import mod.naturalist.init.NaturalistFeatures;
 import mod.naturalist.init.NaturalistItems;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
+import net.minecraft.entity.passive.fish.AbstractGroupFishEntity;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -71,6 +73,7 @@ public class Naturalist {
 
     private void registerEntityAttributes(EntityAttributeCreationEvent event) {
         event.put(NaturalistEntities.ALLIGATOR.get(), AlligatorEntity.registerAttributes().build());
+        GlobalEntityTypeAttributes.put(NaturalistEntities.BASS.get(), AbstractGroupFishEntity.createAttributes().build());
     }
 
     private void registerClient(FMLClientSetupEvent event) {
